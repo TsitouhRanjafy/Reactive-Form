@@ -1,0 +1,19 @@
+<h1>HTML FORM</h1>
+<p>Simple Html Form</p>
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="firstname" class="">Firstname</label><br>
+        <input class="form-control" type="text" formControlName="firstname" id="firstname">
+    </div>
+    <div class="mb-3">
+        <label for="lastname">Lastname</label><br>
+        <input class="form-control" type="text" formControlName="lastname" id="lastname">
+    </div>
+    <div class="mb-3">
+        <label for="age">Age</label><br>
+        <input class="form-control" type="number" formControlName="age"  id="age">
+    </div>
+
+    <button type="submit" class="">Submit</button>
+</form>
