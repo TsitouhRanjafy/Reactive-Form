@@ -1,7 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// border when input is invalid
 .invalid{
-    border: solid 1px red;
+    border: solid 1px rgb(236 72 153);
 }
-.alert{
-    color : red;
-    font-size: 5px;
-}
+// .b-solid-red {
+//     border:solid 1px red ;
+// }
+// .b-solid-green {
+//     border:solid 1px green ;
+// }
+// .b-solid-yellow {
+//     border:solid 1px #c2c2c2 ;
+// }

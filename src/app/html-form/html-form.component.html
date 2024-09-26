@@ -1,29 +1,48 @@
-<h1>HTML FORM</h1>
-<p>Simple Html Form</p>
 
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label for="firstname" class="">Firstname</label><br>
-        <input class="form-control" type="text" formControlName="firstname" id="firstname" required [ngClass]="{ invalid : (formGroup.controls['firstname'].invalid && (formGroup.controls['firstname'].dirty || formGroup.controls['firstname'].touched))}" required>
-        <div *ngIf="formGroup.controls['firstname'].invalid && (formGroup.controls['firstname'].dirty || formGroup.controls['firstname'].touched)">
-            <small class="alert"  *ngIf="formGroup.controls['firstname'].hasError('required')" > Firstname is required </small>
-            <small class="alert"  *ngIf="formGroup.controls['firstname'].hasError('minlength')" > Firstname must have a minimum of 3 characters </small>
+<div class="bg-primary h-full flex flex-col items-center justify-center b-solid-red rounded-3xl py-28 px-20 gap-y-5">
+    
+    <h1 class="text-title-xl w-full b-solid-green text-3xl font-bold cursor-default">Welcom Back</h1>
+
+    <p class="text-paragraphe w-full b-solid-green text-xs cursor-default">Welcom back!Please enter your details.   </p>
+
+    <form class="flex flex-col border-solid bg-primary items-center w-full b-solid-green gap-y-5"  [formGroup]="formGroup" (ngSubmit)="onSubmit()" >
+    
+        <div class="mb-3 flex flex-col w-full b-solid-yellow gap-px">
+            <label for="firstname" class="text-title-xl font-semibold">Firstname</label>
+            <input class="form-control bg-slate-100 p-2 border-weak-smok border-1 w-full rounded-md h-10 focus:outline-none" placeholder="Firstname" type="text" formControlName="firstname" id="firstname" required [ngClass]="{ invalid : (formGroup.controls['firstname'].invalid && (formGroup.controls['firstname'].dirty || formGroup.controls['firstname'].touched))}" required>
+            <div *ngIf="formGroup.controls['firstname'].invalid && (formGroup.controls['firstname'].dirty || formGroup.controls['firstname'].touched)">
+                <small class="text-pink-500"  *ngIf="formGroup.controls['firstname'].hasError('required')" > Firstname is required </small>
+                <small class="text-pink-500"  *ngIf="formGroup.controls['firstname'].hasError('minlength')" > Firstname must have a minimum of 3 characters </small>
+            </div>
         </div>
-    </div>
-    <div class="mb-3">
-        <label for="lastname">Lastname</label><br>
-        <input class="form-control" type="text" formControlName="lastname" id="lastname">
-    </div>
-    <div class="mb-3">
-        <label for="age">Age</label><br>
-        <input class="form-control" type="number" formControlName="age"  id="age" required [ngClass]="{ invalid : (formGroup.controls['age'].invalid && (formGroup.controls['age'].dirty || formGroup.controls['age'].touched))}">
-        <div *ngIf="formGroup.controls['age'].invalid && (formGroup.controls['age'].dirty || formGroup.controls['age'].touched)">
-            <small class="alert"  *ngIf="formGroup.controls['age'].hasError('required')" > Age is required </small>
-            <small class="alert"  *ngIf="formGroup.controls['age'].hasError('min')" > Age must more than 10 </small>
-            <small class="alert"  *ngIf="formGroup.controls['age'].hasError('max')" > Age must less than 90 </small>
-        </div><br>
-        <small>Birthday: {{ birthDay }}</small>
-    </div>
+    
+        <div class="mb-3 border-solid flex flex-col w-full rounded b-solid-yellow gap-px">
+            <label for="lastname" class="text-title-xl font-semibold">Lastname</label>
+            <input class="form-control bg-slate-100 p-2 border-weak-smok border-1 w-full rounded-md h-10 focus:outline-none" placeholder="Lastname" type="text" formControlName="lastname" id="lastname">
+        </div>
+    
+        <div class="mb-3 border-solid flex flex-col w-full rounded b-solid-yellow gap-px">
+            <label for="age" class="text-title-xl font-semibold">Age</label>
+            <input class="form-control bg-slate-100 p-2 border-weak-smok border-1 w-full rounded-md h-10 focus:outline-none" placeholder="Age" type="number" formControlName="age"  id="age" required [ngClass]="{ invalid : (formGroup.controls['age'].invalid && (formGroup.controls['age'].dirty || formGroup.controls['age'].touched))}">
+            <div *ngIf="formGroup.controls['age'].invalid && (formGroup.controls['age'].dirty || formGroup.controls['age'].touched)">
+                <small class="text-pink-500"  *ngIf="formGroup.controls['age'].hasError('required')" > Age is required </small>
+                <small class="text-pink-500"  *ngIf="formGroup.controls['age'].hasError('min')" > Age must more than 10 </small>
+                <small class="text-pink-500"  *ngIf="formGroup.controls['age'].hasError('max')" > Age must less than 90 </small>
+            </div>
+            <small class="text-paragraphe text-xs"  >Birthday: {{ birthDay }}</small>
+        </div>
+    
+        <button type="submit" class="bg-title-xl w-4/5 py-1 px-3 rounded items-center w-full b-solid-yellow font-semibold text-slate-50 h-10">Login</button>
 
-    <button type="submit" class="">Submit</button>
-</form>             
+        <button type="submit" class="border-1 border-weak-smok w-4/5 py-1 px-3 flex flex-row items-center justify-center rounded items-center w-full b-solid-yellow h-10 gap-2">
+            <img class="size-6" src="https://img.icons8.com/?size=100&id=V5cGWnc9R4xj&format=png&color=000000" alt="google-logo">
+            <p class="font-semibold text-title-xl">Sigin in with Google</p>
+        </button>
+
+        <div class="flex felx-row items-center gap-px">
+            <p class="text-paragraphe text-xs cursor-default">Don't have an account?</p>
+            <a class="text-title-xl text-xs" href="">Sign up for free</a>
+        </div>
+
+    </form>             
+</div>
